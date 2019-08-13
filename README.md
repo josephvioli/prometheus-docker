@@ -35,6 +35,10 @@ Create monitor-net network (attachable)
 
     $ sudo docker network create --driver=overlay --attachable monitor-net
 
+If need to use different subnet for ingress network
+    $ sudo docker network rm ingress
+    $ sudo docker network create -d overlay --subnet=10.254.0.0/26 --ingress my-ingress
+
 
 Once configurations are done let's start it up. From the /prometheus project directory run the following command:
 
